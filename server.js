@@ -1,5 +1,6 @@
 require('dotenv').config();
 
+const delay = 3000;
 const tmi = require('tmi.js');
 const client = new tmi.Client({
 	options: { debug: true, messagesLogLevel: "info" },
@@ -26,7 +27,7 @@ client.on('message', (channel, tags, message, self) =>
 
     processed.push(tags.username);
     if(tags.mod)
-        client.say(channel, `@${tags.username}, bjr bstiHey bstiHey`);
+		setTimeout(() => { client.say(channel, `@${tags.username}, bjr bstiHey bstiHey`); }, delay);
     else
-        client.say(channel, `@${tags.username}, bjr bstiHey`);
+		setTimeout(() => { client.say(channel, `@${tags.username}, bjr bstiHey`); }, delay);
 });
