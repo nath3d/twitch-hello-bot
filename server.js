@@ -27,7 +27,7 @@ client.on('message', (channel, tags, message, self) =>
 
     processed.push(tags.username);
     if(tags.mod)
-		setTimeout(() => { client.say(channel, `@${tags.username}, bjr bstiHey bstiHey`); }, delay);
+		setTimeout(() => { client.say(channel, `@${tags.username} bjr bstiHey`); }, delay);
     else
-		setTimeout(() => { client.say(channel, `@${tags.username}, bjr bstiHey`); }, delay);
+		setTimeout(() => { client.say(channel, `@${tags.username} bjr bstiBjr`); }, delay);
 });
