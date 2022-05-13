@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const delay = 3000;
+const delay = 5000;
 const tmi = require('tmi.js');
 const client = new tmi.Client({
 	options: { debug: true, messagesLogLevel: "info" },
@@ -15,7 +15,7 @@ const client = new tmi.Client({
 	channels: [ process.env.TWITCH_CHANNEL ]
 });
 
-var processed = [ ]
+var processed = [ "streamlabs", "nightbot" ]
 var users = process.env.TWITCH_USERS.split(',')
 
 client.connect().catch(console.error);
@@ -27,7 +27,7 @@ client.on('message', (channel, tags, message, self) =>
 
     processed.push(tags.username);
     if(tags.mod)
-		setTimeout(() => { client.say(channel, `@${tags.username} bjr bstiHey`); }, delay);
+		setTimeout(() => { client.say(channel, `@${tags.username} bjr bstiBjr bstiBjr`); }, delay);
     else
 		setTimeout(() => { client.say(channel, `@${tags.username} bjr bstiBjr`); }, delay);
 });
